@@ -1,1 +1,3 @@
+"""Interface class."""
 
+# Author: blabla
