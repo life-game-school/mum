@@ -71,11 +71,22 @@ print(vivantes)
 grille.modifier(vivantes)
 grille.afficher()
 
-max_tour = 3
-for i in range(max_tour):
-    print("Tour n°", i+1)
-    stock = []      #future liste de cellules vivantes
-    # on recherche des voisines de chaque cellule vivante
+def apply_life_rules(vivantes):
+    """ Activates and deactivates cells according to the status of their neighbours.
+
+    Parameters
+    ----------
+    vivantes : list of Cell
+        A list of cells with status 1.
+
+    Returns
+    -------
+    stock : list of Cell
+        The list of the new cells with status 1 after applying the life rules once.
+
+    """
+    stock = [] #future liste de cellules vivantes
+    # on recherche des voisines de chaque cellule vivante)
     for cellule in vivantes :
         cellule = Cellule(cellule[0],cellule[1],grille)
         cellule_voisines = cellule.donner_voisines()
@@ -101,7 +112,12 @@ for i in range(max_tour):
         if cnt_cellule == 3 :
             if cellule.rang not in stock:
                 stock.append(cellule.rang)
-    vivantes = stock
+    return stock
+
+max_tour = 3
+for i in range(max_tour):
+    print("Tour n°", i+1)
+    vivantes = apply_life_rules(vivantes)
     print(len(vivantes), "cellules vivantes au prochain tour")
     print(vivantes)
     grille.modifier(vivantes)
