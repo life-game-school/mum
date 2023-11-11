@@ -20,7 +20,7 @@ def test_still_lifes_block():
     vivantes = [(1, 1), (1, 2), (2, 1), (2, 2)]
     grille.modifier(vivantes)
     nouvelles_vivantes = apply_life_rules(grille, vivantes)
-    assert(set(nouvelles_vivantes) == set(vivantes))
+    assert(sorted(nouvelles_vivantes) == sorted(vivantes))
 
 
 def test_still_lifes_beehive():
@@ -36,7 +36,7 @@ def test_still_lifes_beehive():
     vivantes = [(1, 2), (1, 3), (2, 1), (2, 4), (3, 2), (3, 3)]
     grille.modifier(vivantes)
     nouvelles_vivantes = apply_life_rules(grille, vivantes)
-    assert(set(nouvelles_vivantes) == set(vivantes))
+    assert(sorted(nouvelles_vivantes) == sorted(vivantes))
 
 
 def test_still_lifes_loaf():
@@ -52,7 +52,7 @@ def test_still_lifes_loaf():
     vivantes = [(1, 2), (1, 3), (2, 1), (2, 4), (3, 2), (3, 4), (4, 3)]
     grille.modifier(vivantes)
     nouvelles_vivantes = apply_life_rules(grille, vivantes)
-    assert(set(nouvelles_vivantes) == set(vivantes))
+    assert(sorted(nouvelles_vivantes) == sorted(vivantes))
 
 
 def test_still_lifes_boat():
@@ -67,7 +67,7 @@ def test_still_lifes_boat():
     vivantes = [(1, 1), (1, 2), (2, 1), (2, 3), (3, 2)]
     grille.modifier(vivantes)
     nouvelles_vivantes = apply_life_rules(grille, vivantes)
-    assert(set(nouvelles_vivantes) == set(vivantes))
+    assert(sorted(nouvelles_vivantes) == sorted(vivantes))
 
 
 def test_still_lifes_tub():
@@ -82,5 +82,5 @@ def test_still_lifes_tub():
     vivantes = [(1, 2), (2, 1), (2, 3), (3, 2)]
     grille.modifier(vivantes)
     nouvelles_vivantes = apply_life_rules(grille, vivantes)
-    assert(set(nouvelles_vivantes) == set(vivantes))
+    assert(sorted(nouvelles_vivantes) == sorted(vivantes))
 
