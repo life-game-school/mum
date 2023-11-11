@@ -1,4 +1,4 @@
-from apply_life_rules import Grille, apply_life_rules
+from grille_cellule import Grille, apply_life_rules
 
 
 def test_apply_life_rules():
