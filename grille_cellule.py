@@ -50,10 +50,15 @@ def test_jeu(grille):
 
 def apply_life_rules(grille, vivantes):
     """ Activates and deactivates cells according to the status of their neighbours.
+    
     Parameters
     ----------
+    grille : a Grille object
+        Grid where the population of cells evolves.
+
     vivantes : list of Cell
         A list of cells with status 1.
+    
     Returns
     -------
     stock : list of Cell
@@ -79,11 +84,14 @@ def apply_life_rules(grille, vivantes):
                 if voisin.etat == 1:
                     cnt_voisine = cnt_voisine + 1
             #print("Voisines de", voisine.rang, "vivantes : ", cnt_voisine)
-            if cnt_voisine == 3:
+            if cnt_voisine in [2,3] and voisine.etat == 1 :
                 if voisine.rang not in stock :
                     stock.append(voisine.rang)
-        #print("Voisines de", cellule.rang, "vivantes : ", cnt_cellule)      
-        if cnt_cellule == 3 :
+            elif cnt_voisine == 3 and voisine.etat == 0 :
+                if voisine.rang not in stock :
+                    stock.append(voisine.rang)
+        #print("Voisines de", cellule.rang, "vivantes : ", cnt_cellule)  
+        if cnt_cellule in [2,3] :
             if cellule.rang not in stock:
                 stock.append(cellule.rang)
     return stock
