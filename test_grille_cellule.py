@@ -18,5 +18,6 @@ def test_still_lifes():
     grille = Grille(10)
     grille.generer()
     vivantes = [(1, 1), (1, 2), (2, 1), (2, 2)]
+    grille.modifier(vivantes)
     nouvelles_vivantes = apply_life_rules(grille, vivantes)
     assert(nouvelles_vivantes == vivantes)
