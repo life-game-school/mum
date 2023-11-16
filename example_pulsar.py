@@ -5,7 +5,7 @@ def pulsar_init():
     return vivantes
 
 # Générer la grille
-from grille_cellule_regles import Grille
+from grille_cellule import Grille
 
 grille = Grille(17)
 grille.generer()
