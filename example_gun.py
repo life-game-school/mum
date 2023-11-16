@@ -1,4 +1,4 @@
-from grille_cellule_regles import Grille
+from grille_cellule import Grille
 
 def canon_init():
     vivantes = [(10,1),(10,2),(11,1),(11,2),
